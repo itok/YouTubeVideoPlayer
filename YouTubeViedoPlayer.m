@@ -15,6 +15,12 @@
 -(void) dealloc
 {
 	[videoId release];
+	[m_data release];
+	
+	if (m_conn) {
+		[m_conn cancel];
+		[m_conn release];
+	}
 	
 	[super dealloc];
 }
